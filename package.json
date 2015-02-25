@@ -1,0 +1,27 @@
+{
+  "name": "token-parser",
+  "version": "0.0.1",
+  "description": "A tokenized string parser for JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "token",
+    "lex",
+    "lexical",
+    "lexer",
+    "parser",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "angular-expressions": "^0.2.1",
+    "extend": "^2.0.0",
+    "lex": "^1.7.8"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  }
+}
