@@ -10,7 +10,7 @@ var gulp  = require('gulp')
  * Unit test: uses Mocha to test TokenParser.
  */
 gulp.task('test:unit', function () {
-  return gulp.src(['test/**/*.js'], { read: false })
+  return gulp.src(['test/unit/**/*.js'], { read: false })
     .pipe(mocha({ reporter: 'list' }))
     .on('error', gutil.log);
 });
