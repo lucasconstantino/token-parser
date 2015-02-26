@@ -1,0 +1,36 @@
+{
+  "name": "token-parser",
+  "main": "dist/token-parser.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/lucasconstantino/token-parser",
+  "authors": [
+    "Lucas Constantino Silva <lucasconstantinosilva@gmail.com>"
+  ],
+  "description": "A tokenized string parser for JavaScript",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "token",
+    "lex",
+    "lexical",
+    "parser",
+    "expression",
+    "tokenizer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "lib",
+    "signature",
+    "package.json",
+    "index.js",
+    "gulp",
+    "gulpfile.js"
+  ]
+}
