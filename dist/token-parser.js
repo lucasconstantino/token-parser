@@ -1,7 +1,7 @@
 /**
  * TokenParser - A tokenized string parser for JavaScript
  * @name token-parser
- * @version v0.0.1
+ * @version v0.0.2
  * @link https://github.com/lucasconstantino/token-parser
  * @license MIT
  */
