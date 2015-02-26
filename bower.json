@@ -1,7 +1,7 @@
 {
   "name": "token-parser",
   "main": "dist/token-parser.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/lucasconstantino/token-parser",
   "readmeFilename": "README.md",
   "authors": [

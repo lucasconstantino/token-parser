@@ -1,7 +1,7 @@
 {
   "name": "token-parser",
   "title": "TokenParser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tokenized string parser for JavaScript",
   "readmeFilename": "README.md",
   "main": "index.js",
