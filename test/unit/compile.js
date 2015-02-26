@@ -3,7 +3,7 @@
  */
 
 var expect = require('expect.js')
-  , TokenParser = require('../index')
+  , TokenParser = require('../../index')
   , tokenParser;
 
 describe('TokenParser#compile()', function() {
