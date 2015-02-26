@@ -9,9 +9,10 @@ var ExpressionParser = require('./lib/expression-parser')
 
 function TokenParser(cache) {
   this.lexer = new Lexer();
+  this.cache = cache === false ? false : {};
   this.errorHandlers = [];
   this.nodeTypes = {};
-  this.expressions = new ExpressionParser(cache);
+  this.expressions = new ExpressionParser(this.cache);
 };
 
 TokenParser.prototype.init = function () {
@@ -45,6 +46,9 @@ TokenParser.prototype.filter = function (name, filter) {
 TokenParser.prototype.scan = function (text) {
   if (!this.lexer && this.throwError('TokenParser must be initialized')) return;
 
+  // Early cached return.
+  if (this.cache && this.cache[text]) return this.cache[text];
+
   // Start new lexer.
   this.lexer.setInput(text);
 
@@ -52,6 +56,9 @@ TokenParser.prototype.scan = function (text) {
     , lexed;
 
   while (typeof (lexed = this.lexer.lex()) !== 'undefined') tokens.push(lexed);
+
+  // Cache result.
+  if (this.cache) this.cache[text] = tokens;
 
   return tokens;
 };
