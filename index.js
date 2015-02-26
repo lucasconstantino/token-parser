@@ -9,10 +9,11 @@ var ExpressionParser = require('./lib/expression-parser')
 
 function TokenParser(cache) {
   this.lexer = new Lexer();
-  this.cache = cache === false ? false : {};
+  this.scanCache = cache === false ? false : {};
+  this.compileCache = cache === false ? false : {};
   this.errorHandlers = [];
   this.nodeTypes = {};
-  this.expressions = new ExpressionParser(this.cache);
+  this.expressions = new ExpressionParser(cache);
 };
 
 TokenParser.prototype.init = function () {
@@ -47,7 +48,7 @@ TokenParser.prototype.scan = function (text) {
   if (!this.lexer && this.throwError('TokenParser must be initialized')) return;
 
   // Early cached return.
-  if (this.cache && this.cache[text]) return this.cache[text];
+  if (this.scanCache && this.scanCache[text]) return this.scanCache[text];
 
   // Start new lexer.
   this.lexer.setInput(text);
@@ -58,7 +59,7 @@ TokenParser.prototype.scan = function (text) {
   while (typeof (lexed = this.lexer.lex()) !== 'undefined') tokens.push(lexed);
 
   // Cache result.
-  if (this.cache) this.cache[text] = tokens;
+  if (this.scanCache) this.scanCache[text] = tokens;
 
   return tokens;
 };
@@ -75,11 +76,19 @@ TokenParser.prototype.parse = function (tokens) {
 };
 
 TokenParser.prototype.compile = function (text) {
-  // Scan and parse text for nodes.
-  var nodes = this.parse(this.scan(text));
 
-  // Make sure only one entry point node is resolved.
-  return new CompoundType(nodes);
+  // Early cached return.
+  if (this.compileCache && this.compileCache[text]) return this.compileCache[text];
+
+  // Scan and parse text for nodes.
+  // Make sure only one entry point node (compound) is resolved.
+  var nodes = this.parse(this.scan(text))
+    , compound = new CompoundType(nodes);
+
+  // Cache result.
+  if (this.compileCache) this.compileCache[text] = compound;
+
+  return compound;
 };
 
 TokenParser.prototype.replace = function (text) {
