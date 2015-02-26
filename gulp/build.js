@@ -4,8 +4,10 @@
 
 var gulp        = require('gulp')
   , browserify  = require('browserify')
+  , uglify      = require('gulp-uglify')
   , transform   = require('vinyl-transform')
-  , rename      = require('gulp-rename')
+  , concat      = require('gulp-concat')
+  , uglify      = require('gulp-uglify')
   , pack        = require('../package.json');
 
 /**
@@ -21,7 +23,12 @@ gulp.task('build', function () {
 
   return gulp.src(['./index.js'])
     .pipe(browserified)
-    .pipe(rename(pack.name + '.js'))
+    .pipe(concat(pack.name + '.js'))
+    .pipe(gulp.dest('./dist'))
+    .pipe(uglify({
+      mangle: false
+    }))
+    .pipe(concat(pack.name + '.min.js'))
     .pipe(gulp.dest('./dist'));
 });
 

@@ -10,7 +10,7 @@ var ExpressionParser = require('./lib/expression-parser')
 function TokenParser(cache) {
   this.lexer = new Lexer();
   this.errorHandlers = [];
-  this.nodeTypes = [];
+  this.nodeTypes = {};
   this.expressions = new ExpressionParser(cache);
 };
 
