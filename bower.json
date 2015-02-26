@@ -3,6 +3,7 @@
   "main": "dist/token-parser.js",
   "version": "0.0.1",
   "homepage": "https://github.com/lucasconstantino/token-parser",
+  "readmeFilename": "README.md",
   "authors": [
     "Lucas Constantino Silva <lucasconstantinosilva@gmail.com>"
   ],

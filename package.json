@@ -3,6 +3,7 @@
   "title": "TokenParser",
   "version": "0.0.1",
   "description": "A tokenized string parser for JavaScript",
+  "readmeFilename": "README.md",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
