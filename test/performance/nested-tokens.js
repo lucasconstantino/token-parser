@@ -1,17 +1,17 @@
 /**
- * Test suite for multiple token strings.
+ * Test suite for nested token strings.
  */
 
 var TokenParser = require('../../index')
-  , string = '[foo] & [bar]'
+  , string = '[f[bar]]'
   , context = {
       foo: 'Foo!'
-    , bar: 'Bar!'
+    , bar: 'oo'
     }
   , tokenParser;
 
 module.exports = {
-  name: 'Multiple tokens string replace',
+  name: 'Nested tokens string replace',
   maxTime: 5,
   tests: {
     'With cache': {
