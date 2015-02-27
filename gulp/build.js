@@ -33,6 +33,8 @@ gulp.task('build', function () {
     return b.bundle();
   });
 
+
+
   return gulp.src(['./index.js'])
     .pipe(browserified)
     .pipe(concat(pkg.name + '.js'))

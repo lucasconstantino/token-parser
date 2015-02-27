@@ -24,4 +24,4 @@ gulp.task('test:performance', function () {
     .pipe(benchmark());
 });
 
-gulp.task('test', ['test:unit'], ['test:performance']);
+gulp.task('test', ['test:unit', 'test:performance']);
