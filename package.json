@@ -21,7 +21,6 @@
   "license": "MIT",
   "dependencies": {
     "angular-expressions": "^0.2.1",
-    "extend": "^2.0.0",
     "gulp-mocha": "^2.0.0",
     "lex": "^1.7.8"
   },

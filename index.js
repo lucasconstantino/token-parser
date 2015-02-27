@@ -91,11 +91,8 @@ TokenParser.prototype.compile = function (text) {
   return compound;
 };
 
-TokenParser.prototype.replace = function (text) {
-  var compound = this.compile(text)
-    , args = [].slice.call(arguments, 1);
-
-  return compound.replace.apply(compound, args);
+TokenParser.prototype.replace = function (text, scope) {
+  return this.compile(text).replace(scope);
 };
 
 TokenParser.prototype.addErrorHandler = function (callback) {
