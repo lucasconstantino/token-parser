@@ -62,18 +62,4 @@ describe('TokenParser#replace()', function() {
 
     expect(replaced).to.be.equal(context.foo + ' & ' + context.bar);
   });
-
-  it('should replace composed contexts', function() {
-    var string = '[foo] & [bar]'
-      , context = {
-          foo: 'Foo!'
-        , bar: 'Bar!'
-        }
-      , secondContext = {
-          bar: 'Bar replacement!'
-        }
-      , replaced = tokenParser.replace(string, context, secondContext);
-
-    expect(replaced).to.be.equal(context.foo + ' & ' + secondContext.bar);
-  });
 });
