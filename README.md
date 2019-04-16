@@ -1,4 +1,7 @@
 # TokenParser
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/lucasconstantino/token-parser.svg)](https://greenkeeper.io/)
+
 TokenParser is a library to replace tokenized string. It has a build in extensible lexer to parse text and find expressions. By default, it will expect expressions encapsulated with ```[``` and ```]```, and will use [angular-expression](https://www.npmjs.com/package/angular-expressions) to parse the expressions.
 
 ## Install
